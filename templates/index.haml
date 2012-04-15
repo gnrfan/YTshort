@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+%html
+  %head
+    %link{:rel => "stylesheet", :type => "text/css", :href => "css/main.css"}/
+    %title YouTube URL Shortener
+  %body
+    %h1 YouTube URL Shortener
+    - if @short_url
+      %p
+        %strong Original URL:
+      %p
+        %a(title="Original URL"){:href => @original_uri,:target => "blank"}= @original_uri
+      %p
+        %strong Short URL:
+      %p
+        %a(title="Shortened URL"){:href => @short_url,:target => "blank"}= @short_url
+    - else
+      %p
+        %strong ERROR:
+      %p= @error
